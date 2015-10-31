@@ -5,16 +5,12 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- add bootstrap -->
 	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Baumans' rel='stylesheet' type='text/css'>
 	<link href="style.css" rel="stylesheet">
-	<title>Minimum Bootstrap HTML Skeleton</title>
-
-	<!--  -->
-
-	<style>
-
-	</style>
+	<title>Git page Url Generator</title>
+	<!-- add angular -->
 	<script src="https://code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
 	<script src="app.js"></script>
 </head>
@@ -29,43 +25,33 @@
 		</div>
 
 
-	<div ng-controller="mainController" class="col-md-offset-2 col-md-8">
-		<form name="form"novalidate class="simple-form">
-			<input name ="uName"type="text" class="form-control" ng-model="user.name" placeholder="Github user name (required)" required=""/>
-			<div ng-show="form.$submitted || form.uName.$touched">
-      <div class="alert alert-danger" ng-show="form.uName.$error.required">You need to tell us your user name.</div>
-    </div>
-			<br>
-			<input name ="repoName"type="text" class="form-control" ng-model="user.repo" placeholder="Repository name (required)" required=""/>
-			<div ng-show="form.$submitted || form.repoName.$touched">
-      <div class="alert alert-danger" ng-show="form.repoName.$error.required">You need to tell us your reppository name .</div>
-    </div>
-			<br/>
-			<input type="text" class="form-control" ng-model="user.direc" placeholder="directory if any (optional)" />
-
-			<br/>
-			<!--
-			<input  class="btn btn-default" type="submit" ng-disabled="form.$invalid" ng-click="getLink(user)" value="get Link" />
-			
-			<a ng-hide="form.$invalide" class ="col-md-offset-1" href="{{links.http+links.name+links.git+ links.repo +links.slash+links.direc}}">{{links.http+links.name+links.git+ links.repo +links.slash+links.direc}} </a>
--->
-			
-			
+		<div ng-controller="mainController" class="col-md-offset-2 col-md-8">
+			<!-- add controller -->
+			<form name="form" novalidate class="simple-form">
+				<!-- novalidate means it will ignore windows default validation -->
+				<input name="uName" type="text" class="form-control" ng-model="user.name" placeholder="Github user name (required)" required="" />
+				<!-- form-control in bootstrap -->
+				<div ng-show="form.$submitted || form.uName.$touched">
+					<!-- if submitted button press or uName inputfield touuched -->
+					<div class="alert alert-danger" ng-show="form.uName.$error.required">You need to tell us your user name.</div>
+					<!-- if thre is any error in uname input field this div show-->
+				</div>
+				<br>
+				<input name="repoName" type="text" class="form-control" ng-model="user.repo" placeholder="Repository name (required)" required="" />
+				<div ng-show="form.$submitted || form.repoName.$touched">
+					<div class="alert alert-danger" ng-show="form.repoName.$error.required">You need to tell us your reppository name .</div>
+				</div>
+				<br/>
+				<input type="text" class="form-control" ng-model="user.direc" placeholder="directory if any (optional)" />
+				<br/>
 				<div class="text-center">
-						<input  class="btn btn-default" type="submit" ng-disabled="form.$invalid" ng-click="getLink(user)" value="get Link" />
+					<input class="btn btn-default" type="submit" ng-disabled="form.$invalid" ng-click="getLink(user)" value="get Link" />
 				</div>
 				<div ng-hide="form.$invalid" class="text-center">
-					<a  class ="text-center" href="{{links.http+links.name+links.git+ links.repo +links.slash+links.direc}}">{{links.http+links.name+links.git+ links.repo +links.slash+links.direc}} </a>
+					<a class="text-center" href="{{links.http+links.name+links.git+ links.repo +links.slash+links.direc}}">{{links.http+links.name+links.git+ links.repo +links.slash+links.direc}} </a>
 				</div>
-
-      
-      
-    </div>
-		
-		
+		</div>
 		</form>
-		
-<!--		<p>{{links.http+links.name+links.git+ links.repo +links.slash+links.direc}} </p>-->
 	</div>
 
 	</div>
