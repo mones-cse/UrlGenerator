@@ -1,0 +1,43 @@
+.full {
+	background: url('02.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+body {
+	background-color: rgba(255, 255, 255, 0);
+	font-family: Baumans;
+}
+
+h1 {
+	font-size: 56px;
+}
+
+p {
+	font-size: 36px;
+}
+
+#font {
+	color: aliceblue;
+}
+
+a{
+		font-size: 36px;
+}
+
+/*
+.simple-form input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+  }
+
+.simple-form input.ng-valid.ng-touched {
+    background-color: #78FA89;
+  }*/
+
+.alert-danger{
+	margin-bottom: -10px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}

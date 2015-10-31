@@ -1,12 +1,13 @@
 <!DOCTYPE html >
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="myApp" class="full">
+<!--	here myApp is same as the appname in app.js-->
 
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
-
-
+	<link href='https://fonts.googleapis.com/css?family=Baumans' rel='stylesheet' type='text/css'>
+	<link href="style.css" rel="stylesheet">
 	<title>Minimum Bootstrap HTML Skeleton</title>
 
 	<!--  -->
@@ -19,28 +20,57 @@
 </head>
 
 <body>
-	
-	
-
 	<div class="container">
-		<div ng-controller="mainController">
-			<h1>Hello world {{name}}</h1>
+		<div class="row">
+			<div class="col-md-offset-2 col-md-8">
+				<h1 class="text-center" id="font">Hello</h1>
+				<p>This page will generate gh-pages link just insert following information</p>
+			</div>
 		</div>
+
+
+	<div ng-controller="mainController" class="col-md-offset-2 col-md-8">
+		<form name="form"novalidate class="simple-form">
+			<input name ="uName"type="text" class="form-control" ng-model="user.name" placeholder="Github user name (required)" required=""/>
+			<div ng-show="form.$submitted || form.uName.$touched">
+      <div class="alert alert-danger" ng-show="form.uName.$error.required">You need to tell us your user name.</div>
+    </div>
+			<br>
+			<input name ="repoName"type="text" class="form-control" ng-model="user.repo" placeholder="Repository name (required)" required=""/>
+			<div ng-show="form.$submitted || form.repoName.$touched">
+      <div class="alert alert-danger" ng-show="form.repoName.$error.required">You need to tell us your reppository name .</div>
+    </div>
+			<br/>
+			<input type="text" class="form-control" ng-model="user.direc" placeholder="directory if any (optional)" />
+
+			<br/>
+			<!--
+			<input  class="btn btn-default" type="submit" ng-disabled="form.$invalid" ng-click="getLink(user)" value="get Link" />
+			
+			<a ng-hide="form.$invalide" class ="col-md-offset-1" href="{{links.http+links.name+links.git+ links.repo +links.slash+links.direc}}">{{links.http+links.name+links.git+ links.repo +links.slash+links.direc}} </a>
+-->
+			
+			
+				<div class="text-center">
+						<input  class="btn btn-default" type="submit" ng-disabled="form.$invalid" ng-click="getLink(user)" value="get Link" />
+				</div>
+				<div ng-hide="form.$invalid" class="text-center">
+					<a  class ="text-center" href="{{links.http+links.name+links.git+ links.repo +links.slash+links.direc}}">{{links.http+links.name+links.git+ links.repo +links.slash+links.direc}} </a>
+				</div>
+
+      
+      
+    </div>
 		
-
-
-
-
+		
+		</form>
+		
+<!--		<p>{{links.http+links.name+links.git+ links.repo +links.slash+links.direc}} </p>-->
 	</div>
 
+	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-
-
-	<script>
-	</script>
-
 </body>
 
 </html>
