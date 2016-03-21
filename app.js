@@ -3,6 +3,7 @@ var myApp = angular.module('myApp',[]);
 
 myApp.controller('mainController',['$scope',function($scope){
 	console.log($scope);
+	mixpanel.track("Video play");
 	$scope.user;
 	$scope.links={};
 	
@@ -12,5 +13,5 @@ myApp.controller('mainController',['$scope',function($scope){
 		$scope.links.http="http://";
 		$scope.links.git=".github.io/";
 	}
-	
+
 }]);
