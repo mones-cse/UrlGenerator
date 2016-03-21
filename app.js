@@ -12,6 +12,7 @@ myApp.controller('mainController',['$scope',function($scope){
 		$scope.links.slash="/";
 		$scope.links.http="http://";
 		$scope.links.git=".github.io/";
+		mixpanel.track("button click");
 	}
 
 }]);
